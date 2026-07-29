@@ -1,21 +1,11 @@
-window.onload=function(){
+document
+.getElementById("enterBtn")
+.addEventListener("click",()=>{
 
-setTimeout(function(){
 
-document.getElementById("loading-screen").style.display="none";
+alert(
+"Welcome to your universe, Nanu ❤️\n\nMade with love by Anu ✨"
+);
 
-document.getElementById("main-content").style.display="flex";
-
-},3000);
-
-};
-
-document.addEventListener("click",function(e){
-
-if(e.target.id==="enterBtn"){
-
-alert("Welcome to your universe, Nanu ❤️");
-
-}
 
 });
