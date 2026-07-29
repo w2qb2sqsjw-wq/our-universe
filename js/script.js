@@ -1,8 +1,8 @@
-// Typing
+// Typing animation
 
-let text="Dear Nanu ❤️";
+const text = "Dear Nanu ❤️";
 
-let index=0;
+let index = 0;
 
 
 function type(){
@@ -24,31 +24,39 @@ type();
 
 
 
-// Relationship timer
 
-function timer(){
+// Relationship counter
 
-let start=new Date("February 9, 2025");
-
-let today=new Date();
-
-let difference=today-start;
+function updateCounter(){
 
 
-let days=Math.floor(
-difference/(1000*60*60*24)
+const startDate = new Date("February 9, 2025");
+
+
+const today = new Date();
+
+
+const difference = today - startDate;
+
+
+const days = Math.floor(
+difference / (1000 * 60 * 60 * 24)
 );
 
 
+
 document.getElementById("counter").innerHTML =
-days+" days together ❤️";
+days + " days together ❤️";
+
 
 }
 
 
-timer();
+updateCounter();
 
-setInterval(timer,60000);
+
+setInterval(updateCounter,60000);
+
 
 
 
@@ -57,7 +65,7 @@ setInterval(timer,60000);
 document.getElementById("enterBtn").onclick=function(){
 
 alert(
-"Welcome to Nanu's Universe ❤️"
+"Welcome to Nanu's Universe ❤️\n\nMore surprises are coming ✨"
 );
 
 };
