@@ -11,180 +11,93 @@ height:100vh;
 
 overflow:hidden;
 
-position:relative;
-
 display:flex;
 
 justify-content:center;
 
 align-items:center;
 
-font-family:Arial, sans-serif;
+background:
+linear-gradient(135deg,#090016,#26003d,#4b0f40);
+
+font-family:Arial,sans-serif;
 
 color:white;
 
-background:linear-gradient(
-135deg,
-#090b1f,
-#24104f,
-#6b1b50
-);
-
 }
 
 
 
-body::before{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background-image:
-radial-gradient(white 1px, transparent 1px);
-
-background-size:40px 40px;
-
-opacity:.25;
-
-}
-
-
-
-.container{
-
-width:90%;
-
-max-width:380px;
-
-padding:35px;
-
-text-align:center;
-
-border-radius:25px;
-
-background:rgba(255,255,255,0.1);
-
-backdrop-filter:blur(15px);
-
-border:1px solid rgba(255,255,255,.2);
-
-position:relative;
-
-z-index:5;
-
-}
-
-
-
-h3{
-
-color:#ffb6d9;
-
-margin-bottom:20px;
-
-}
-
-
-
-h1{
-
-font-size:40px;
-
-margin-bottom:20px;
-
-}
-
-
-
-p{
-
-line-height:1.8;
-
-margin-bottom:30px;
-
-}
-
-
-
-button{
-
-padding:15px 30px;
-
-border:none;
-
-border-radius:50px;
-
-background:#ff4f93;
-
-color:white;
-
-font-size:17px;
-
-cursor:pointer;
-
-position:relative;
-
-z-index:10;
-
-}
-
-
-
-button:hover{
-
-transform:scale(1.05);
-
-}
-
-
-
-/* Loading */
-
-
-#loading-screen{
+#stars{
 
 position:fixed;
 
 inset:0;
 
-background:#080818;
+background-image:
+radial-gradient(white 1px,transparent 1px);
+
+background-size:45px 45px;
+
+opacity:.35;
+
+animation:move 50s linear infinite;
+
+}
+
+
+
+@keyframes move{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(500px);
+}
+
+}
+
+
+
+#loading{
+
+position:fixed;
+
+inset:0;
+
+background:#07000f;
 
 display:flex;
-
-flex-direction:column;
 
 justify-content:center;
 
 align-items:center;
 
-z-index:100;
+flex-direction:column;
 
-animation:hide 3s forwards;
+z-index:20;
 
-}
-
-
-
-#loading-screen h1{
-
-color:#ff7ab8;
+animation:loading 4s forwards;
 
 }
 
 
 
-@keyframes hide{
+#loading h1{
 
-0%{
+color:#ff77b7;
 
-opacity:1;
+font-size:40px;
 
 }
 
-80%{
+
+
+@keyframes loading{
+
+0%,80%{
 
 opacity:1;
 
@@ -202,44 +115,130 @@ visibility:hidden;
 
 
 
-/* Hearts */
+.card{
+
+width:90%;
+
+max-width:400px;
+
+padding:35px;
+
+text-align:center;
+
+background:rgba(255,255,255,.1);
+
+border-radius:30px;
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.2);
+
+z-index:5;
+
+}
+
+
+
+h3{
+
+color:#ffb4d8;
+
+margin-bottom:20px;
+
+}
+
+
+
+h1{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+}
+
+
+
+p{
+
+line-height:1.8;
+
+}
+
+
+
+.timer{
+
+margin:25px 0;
+
+padding:15px;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.08);
+
+}
+
+
+
+button{
+
+margin-top:20px;
+
+padding:15px 30px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff4f93;
+
+color:white;
+
+font-size:17px;
+
+}
+
+
+
+#musicBtn{
+
+position:fixed;
+
+top:20px;
+
+right:20px;
+
+z-index:10;
+
+padding:12px;
+
+}
+
 
 
 .heart{
 
 position:fixed;
 
-bottom:-50px;
+bottom:-30px;
 
 z-index:2;
 
-pointer-events:none;
-
-animation:heartMove linear forwards;
+animation:heart 6s linear forwards;
 
 }
 
 
 
-@keyframes heartMove{
+@keyframes heart{
 
-
-0%{
-
-transform:translateY(0);
-
-opacity:1;
-
-}
-
-
-100%{
+to{
 
 transform:translateY(-110vh);
 
 opacity:0;
 
 }
-
 
 }
