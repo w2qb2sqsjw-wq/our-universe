@@ -1,96 +1,63 @@
-// Typing effect
+// Typing
 
 let text="Dear Nanu ❤️";
 
-let i=0;
+let index=0;
 
 
-function typing(){
+function type(){
 
-if(i<text.length){
+if(index < text.length){
 
-document.getElementById("typing").innerHTML+=text[i];
+document.getElementById("typing").innerHTML += text[index];
 
-i++;
+index++;
 
-setTimeout(typing,150);
-
-}
+setTimeout(type,150);
 
 }
 
+}
 
-typing();
+
+type();
 
 
 
 // Relationship timer
 
-let start=new Date("2025-02-09");
+function timer(){
+
+let start=new Date("February 9, 2025");
+
+let today=new Date();
+
+let difference=today-start;
 
 
-function updateTimer(){
-
-let now=new Date();
-
-let diff=now-start;
+let days=Math.floor(
+difference/(1000*60*60*24)
+);
 
 
-let days=Math.floor(diff/(1000*60*60*24));
-
-
-document.getElementById("counter").innerHTML=
+document.getElementById("counter").innerHTML =
 days+" days together ❤️";
 
 }
 
 
-updateTimer();
+timer();
 
-setInterval(updateTimer,1000);
-
-
-
-
-// Floating hearts
-
-
-function heart(){
-
-let h=document.createElement("div");
-
-h.className="heart";
-
-h.innerHTML="❤️";
-
-h.style.left=Math.random()*100+"vw";
-
-h.style.fontSize=(15+Math.random()*25)+"px";
-
-document.body.appendChild(h);
-
-
-setTimeout(()=>{
-
-h.remove();
-
-},6000);
-
-}
-
-
-setInterval(heart,800);
-
+setInterval(timer,60000);
 
 
 
 // Button
 
-
 document.getElementById("enterBtn").onclick=function(){
 
 alert(
-"Welcome to Nanu's Universe ❤️\n\nMore surprises are waiting ✨"
+"Welcome to Nanu's Universe ❤️"
 );
 
 };
